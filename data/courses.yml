@@ -1,0 +1,236 @@
+# Catálogo de charlas
+catalog:
+  - id: 1
+    image: 'diodos cesar viloria.jpg'
+    author: 'César Viloria N'
+    author_bio: 'Ing. Electrónico y MSc en Ing. De Sistemas de la Universidad del Norte. Profesor del Departamento de Ing. Eléctrica y Electrónica de la Universidad del Norte.'
+    author_cvlac: 'http://190.216.132.131:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000980307'
+    author_channel: 'http://youtu.be/-bpoesbxEEs'
+    author_image: '7.jpg'
+    topics:
+      - id: 8
+        name: 'Diodos Ideales / Conceptualización y análisis de circuitos con diodos ideales.'
+        video: 'http://youtu.be/yMiVxpfJroU'
+      - id: 9
+        name: 'Diodos Ideales – Ejercicio / Ejemplos de análisis de circuitos con diodos ideales.'
+        video: 'http://youtu.be/KolkgY8a4Go'
+      - id: 10
+        name: 'Diodos Reales / Conceptualización y análisis de circuitos con diodos reales'
+        video: '' 
+    bibliography: |
+      <ul>
+        <li>
+          <strong> SEDRA, Adel; SMITH, Kenneth. Circuitos Microelectrónicos. 5ª Ed. McGraw HIll. Mexico 2006.</strong>
+        </li>
+        <li>
+          <strong> RASHID, Muhammad. Circuitos Microelectrónicos: Análisis y Diseño. Thomson Editores. Boston, 1999.</strong>
+        </li>
+      </ul>
+
+  - id: 2
+    image: 'heidy robles textos expositivos.jpg'
+    author: 'Heidy Robles Noriega'
+    author_bio: 'La profesora Robles tiene una maestría en la enseñanza del inglés de la  Universidad del Norte, Colombia. Es profesora asistente del departamento de Lenguas. Su práctica e investigación se ha enfocado en la integración de la tecnología en el  aprendizaje de lenguas. Ha presentado ponencias en ACE Seminario (ISTEC), Encuentro Internacional EDUCARED Colombia y en otras conferencias relacionadas con tecnologías . Actualmente, es candidata a doctora en Innovación Educativa del   Instituto Tecnológico de Monterrey.'
+    author_cvlac: 'http://scienti1.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001335779'
+    author_channel: 'http://youtu.be/-bpoesbxEEs'
+    author_image: '7.jpg'
+    topics:
+      - id: 11
+        name: '¿Qué son los textos expositivos?'
+        video: 'http://youtu.be/-z9VuVtNJyU'
+      - id: 12
+        name: 'Citación: Normas para evitar plagios'
+        video: 'http://youtu.be/-bpoesbxEEs'
+    bibliography: |
+      <ul>
+        <li>
+          <strong>Moreno, F., Marthe, N. & Rebolledo, L.A. (2010).  Cómo escribir textos académicos según normas internacionales: APA, IEEE, MLA, Vancouver e ICONTEC. Barranquilla: Uninorte. Montolío, E. (coord.) (2000). Manual práctico de escritura académica. Barcelona: Ariel, 3 v. Castelló, M. (2007). El proceso de composición de textos académicos.  En Castelló, M. (Coord.) Escribir y comunicarse en contextos científicos y académicos. Conocimientos y estrategias. Barcelona: Graó.</strong>
+        </li>
+      </ul>
+
+  - id: 3
+    image: 'literatura fantastica.jpg'
+    author: 'María Alejandra Arias Murillo'
+    author_bio: 'Profesional en Estudios Literarios (P.U.J.) y Mg. en Educación (P.U.J.). Docente desde hace más de 14 años en las áreas de Literatura y Redacción. '
+    author_cvlac: 'No tiene'
+    author_channel: 'http://youtu.be/-bpoesbxEEs'
+    author_image: '7.jpg'
+    topics:
+      - id: 14
+        name: 'Literatura gótica.'
+        video: 'http://youtu.be/7gftlXxPqeY'
+    bibliography: |
+      <ul>
+      </ul>
+
+  - id: 4
+    image: 'conflicto arabe.jpg'
+    author: 'Massimo Di Ricco'
+    author_bio: 'Doctor en Estudios Culturales Mediterráneos por la Universidad Rovira i Virgili (URV) de Tarragona (España), con mas de 10 años de experiencia en el estudio de la región de Medio Oriente y de los procesos de la globalización y sus influencias a nivel local. '
+    author_cvlac: 'No tiene'
+    author_channel: 'http://youtu.be/-bpoesbxEEs'
+    author_image: '7.jpg'
+    topics:
+      - id: 15
+        name: 'Comics'
+        video: 'http://youtu.be/kAoV9G7ezwg'
+      - id: 16
+        name: 'novelas graficas'
+        video: 'http://youtu.be/7gftlXxPqeY'
+      - id: 17
+        name: ' fanzines en Medio Oriente: entre memoria, activismo y sostenibilidad'
+        video: 'http://youtu.be/7gftlXxPqeY'
+    bibliography: |
+      <ul>
+        <li>
+          <strong>Cassiau-Haurie, Christophe. “La BD en Tunisie: Introduction.” In Comment peut-on faire de la BD en Afrique?33 entretiens pour comprendre, edited by Christophe Cassiau-Haurie. Paris: Africultures Association, Harmattan (L'), 2011.</strong>
+        </li>
+        <li>
+          <strong>Khoury, George. “La bande dessinée d’expression arabe de 1950 à nos jours.” Takam Tikou, March 11, 2011. Accessed October 18, 2013. http://takamtikou.bnf.fr/dossiers/dossier-2011-la-bande-dessinee/la-bande-dessinee-d-expression-arabe-de-1950-a-nos-jours </strong>
+        </li>
+        <li>
+          <strong>Hammond, Andrew. Popular Culture in the Arab World: Arts, Politics, and the Media. Cairo: American University in Cairo Press, 2007.</strong>
+        </li>
+        <li>
+          <strong>Miller, Anne. Reading Bande Dessinée. Critical Approaches to French-language Comic Strip. Bristol/Chicago: Intellect, 2007.</strong>
+        </li>
+        <li>
+          <strong>Repetti, Massimo. “African Wave: Specificity and Cosmopolitanism African Comics,” African Arts Summer 2007(a): 16-35.</strong>
+        </li>
+        <li>
+          <strong>Repetti, Massimo. “African "Ligne Claire": The Comics of Francophone Africa,” International Journal of Comic Art 9.1 2007(b): 515–541. </strong>
+        </li>
+        <li>
+          <strong>The fdz. “Thinking in opposite directions.” Arte East Quarterly, Summer 2008. </strong>
+        </li>
+        <li>
+          <strong>Winegar, Jessica. Creative Reckonings: The Politics of Art and Culture in Contemporary Egypt. Stanford: Stanford University Press, 2006.   </strong>
+        </li>
+      </ul>
+
+  - id: 5
+    image: 'conflicto arabe.jpg'
+    author: 'Massimo Di Ricco'
+    author_bio: 'Doctor en Estudios Culturales Mediterráneos por la Universidad Rovira i Virgili (URV) de Tarragona (España), con mas de 10 años de experiencia en el estudio de la región de Medio Oriente y de los procesos de la globalización y sus influencias a nivel local. El estudio de la región de Medio Oriente se ha caracterizado por numerosas estancias de larga duración en instituciones académicas y organizaciones de la sociedad civil de Líbano, Egipto y Túnez, trabajando también por medios de comunicación internacionales. Enfoque multidisciplinar con énfasis en los ámbitos políticos y históricos de la actualidad y los procesos de la globalización. Área de interés incluye la historia global, la historia política, el rol de los movimientos sociales, y las relaciones entre America Latina y Medio Oriente. '
+    author_cvlac: ''
+    author_channel: ''
+    author_image: '7.jpg'
+    topics:
+      - id: 18
+        name: 'Conflicto en Palestina: el fracaso de la solución de dos Estados '
+        video: 'http://youtu.be/yRzmNg_3TQ0'
+    bibliography: |
+      <ul>
+        <li>
+          <strong> Beinin, J. (2005) Forgetfulness for Memory: the Limits of the New Israeli History, Journal of Palestine Study, Vol. XXXIV, N° 2.</strong>
+        </li>
+        <li>
+          <strong> Ben-Dor, Oren (2007) Challenging core immorality in Palestine: philosophical reflections on the anti-apartheid struggle and the current "boycott of Israel" debate. Holy Land Studies, 6, (1), 75-105.</strong>
+        </li>
+        <li>
+          <strong>De Vries, D. (2004) British Rule and Arab-Jewish Coalescence of Interest: The 1946 Civil Servants' Strike in Palestine, International Journal of Middle East Studies, Vol. 36, No. 4, pp. 613-638 .</strong>
+        </li>
+        <li>
+          <strong>King, M. (2007) A Quiet Revolution: The First Palestinian Intifada and Nonviolent Resistance, New York: Nation Books.</strong>
+        </li>
+        <li>
+          <strong>Pappe, I. (2007), Historia de la Palestina moderna: un territorio, dos pueblos, Madrid: Akal.</strong>
+        </li>
+        <li>
+          <strong>Shlaim, A. (2004) The War of the Israelí Historians, Annales, 59:1, 161-67.</strong>
+        </li>
+         <li>
+          <strong>VV.AA (2007) The One State Declaration: Statement.</strong>
+        </li>
+      </ul>
+
+  - id: 6
+    image: 'conflicto arabe.jpg'
+    author: 'Massimo Di Ricco'
+    author_bio: 'Doctor en Estudios Culturales Mediterráneos por la Universidad Rovira i Virgili (URV) de Tarragona (España), con mas de 10 años de experiencia en el estudio de la región de Medio Oriente y de los procesos de la globalización y sus influencias a nivel local. El estudio de la región de Medio Oriente se ha caracterizado por numerosas estancias de larga duración en instituciones académicas y organizaciones de la sociedad civil de Líbano, Egipto y Túnez, trabajando también por medios de comunicación internacionales. Enfoque multidisciplinar con énfasis en los ámbitos políticos y históricos de la actualidad y los procesos de la globalización. Área de interés incluye la historia global, la historia política, el rol de los movimientos sociales, y las relaciones entre America Latina y Medio Oriente. '
+    author_cvlac: ''
+    author_channel: ''
+    author_image: '7.jpg'
+    topics:
+      - id: 19
+        name: 'Los descendientes de los migrantes árabes y la política en Barranquilla y la región del Caribe  '
+        video: 'http://youtu.be/u6UXiNOIeFI'
+    bibliography: |
+      <ul>
+        <li>
+          <strong>Bell Lemus, C. & Villalón, J. (2000). El periodo del Frente Nacional y la crisis de los años sesenta (1957-58-1974-75). En J. Villalón (Comp.), Historia de Barranquilla, Barranquilla, Colombia: Ediciones Uninorte. </strong>
+        </li>
+        <li>
+          <strong> Fawcett de Posada, L. (1991). Libaneses, palestinos y sirios en Colombia. Documentos Ceres,9. Centro de Estudios Regionales, Universidad del Norte, Barranquilla. </strong>
+        </li>
+        <li>
+          <strong>Fawcett de Posada, L. & Posada Carbó, E. (1992). En la tierra de oportunidades: los sirio-libaneses en Colombia, Boletín Cultural y Bibliográfico, XXIX (59), Biblioteca Luis Ángel Arango, Bogotá D.C. </strong>
+        </li>
+        <li>
+          <strong>Fawcett de Posada, L. & Posada Carbó, E. (1998). Árabes y judíos en el desarrollo del Caribe colombiano 1850 – 1950, Boletín Cultural y Bibliográfico, XXXV (49). Biblioteca Luis Ángel Arango, Bogotá, D.C. </strong>
+        </li>
+        <li>
+          <strong>Rhenals Doria, A. & Florez Bolívar, F. (ene-jun 2013). Escogiendo entre los ex- tranjeros “indeseables”: afro-antillanos, sirio-libaneses, raza e inmigracion en Colombia, 1880-1937. Achsc, 40(1). </strong>
+        </li>
+        <li>
+          <strong>Rodríguez Becerra, M. & Restrepo, J. (mayo de 1982). Los empresarios extranjeros en Barranquilla: 1820 – 1900. Desarrollo y Sociedad, 8, CEDE, Uniandes. </strong>
+        </li>
+        <li>
+          <strong>Vargas, P. (2011). Pequeño equipaje, grandes ilusiones. La migración árabe a Colombia. Bogotá, D.C.: Taurus. </strong>
+        </li>
+        <li>
+          <strong>Villaloń, J. (2003). Crisis urbana y conflictos políticos a mediados de los años ochenta en Barranquilla. En L. E. Sánchez Bonett (Comp.), Barranquilla, lecturas urbanas (pp.115-136).Barranquilla, Colombia: Observatorio del Cari- be colombiano-Universidad del Atlántico. </strong>
+        </li>
+        <li>
+          <strong>Villalón, J. (2008). Colonias extranjeras en Barranquilla. Barranquilla, Colombia: Ediciones Uninorte.  </strong>
+        </li>
+        <li>
+          <strong>Zambrano Pérez, M. (1998). El desarrollo del empresariado en Barranquilla (1880- 1945). Coleccion de Ciencias Sociales y Económicas Rodrigo Noguera Ba- rrenche. Barranquilla, Colombia: Universidad del Atlántico.  </strong>
+        </li>
+      </ul>
+
+  - id: 7
+    image: 'plantas medicinales.jpg'
+    author: 'Rubén Alberto Jiménez Cuentas'
+    author_bio: 'Químico Farmacéutico (Universidad del Atlántico), especialización en  Docencia Maestría en Biología (Universidad del Norte- Universidad Javeriana). Profesor visitante – Investigador en el programa de Química de la Universidad de Oviedo (España) Investigaciones realizadas en el campo de la Química de plantas medicinales. Experiencia docente en química general, química para medicina, química para enfermería, Electroquímica y Bioenergética, química y lo cotidiano,  Plantas medicinales. Evaluador y jurado calificador de proyectos de grado de Química y Química y Farmacia de la Universidad del Atlántico, creador de Asignaturas electivas como Química y lo cotidiano, plantas medicinales, Flora local.'
+    author_cvlac: 'http://190.216.132.131:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000435465'
+    author_channel: ''
+    author_image: '7.jpg'
+    topics:
+      - id: 20
+        name: 'Uso y Abuso de las plantas medicinales'
+        video: 'http://youtu.be/KLDuQ20iPMU'
+      - id: 21
+        name: 'Preparados con plantas medicinales'
+        video: 'http://youtu.be/AvQ167W_qME'
+      - id: 22
+        name: 'Aceites esenciales'
+        video: 'http://youtu.be/sFQ1uxyOXz4'
+    bibliography: |
+      <ul>
+        <li>
+          <strong>Bibliografía Básica</strong>
+          <ol>
+            <li>MARTÍNEZ M A. Farmacognosia y Fitoquímica. Primera edición. Medellín: Universidad de Antioquia.1997. http://huitoto.udea.edu.co/</li>
+            <li>GUPTA, Mahabir. 270 plantas medicinales de Iberoamérica-Publicado por la Cyted. Santa Fe de Bogotá: convenio Andrés bello.  2004. 617 </li>
+            <li>GARCIA B. Hernando. Flora Medicinal de Colombia: botánica médica. Universidad Nacional de Colombia. Instituto de Ciencias Naturales. Bogotá. 1975.</li>
+            <li>DOMINGUEZ, Xorge. Cromatografía en papel y en capa delgada. 2ED. Secretaría General de la OEA. Washington. 80 p Monografía # 16</li>
+          </ol>
+        </li>
+        <li>
+          <strong>Bibliografía Complementaria</strong>
+          <ol>
+            <li>PIÑEROS Corpas J. Plantas medicinales: compendio de farmacología vegetal. 2ED.  Fedicor. Santa fe de  Bogotá. 211p.</li>
+            <li>Kossmann, I. Vicente, C. Salud y plantas medicinales: nuestra capacidad de estar sanos por naturaleza. Planeta. Buenos Aires. 195 p.</li>
+            <li>FENWICK, Roger. Phytochemical in health and disease. Marcel Dekker, Nueva York. 2004. 364 p.</li>
+          </ol>
+        </li>
+      </ul>
+# Charlas destacadas en la página principal
+# La primero, aparece a la derecha con mayor peso que
+# las demás
+highlighted: [8, 11, 14, 16, 20]
+
+
+# Charlas sugeridas, aparecen debajo en una lista
+suggested: [10, 12, 17, 21, 22]

@@ -1,0 +1,52 @@
+<% 
+
+	topics = data.courses.catalog.map do |c| 
+		c.topics.map do |t|
+			OpenStruct.new({
+				id: t.id,
+				name: t.name,
+				author: c.author,
+				image: c.image,
+				url: "/courses/" + "#{t.name} #{t.id}".slugify
+			})
+		end
+	end.flatten
+
+%>
+
+$ ->
+
+  # Prevent reloading browser with empty links
+  $(document).on 'click', '[href^=#], .active > a', (e) -> e.preventDefault()
+
+  # Initialize foundation
+  $(document).foundation()
+
+  # Typeahead
+  topics = <%= topics.map{|t| t.marshal_dump}.to_json %>
+  urls = <%= topics.each_with_object({}){|t, h| h[t.id] = t.url}.to_json %>
+  console.log urls
+
+  (engine = new Bloodhound(
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value')
+    queryTokenizer: (q) -> Bloodhound.tokenizers.whitespace normalize(q)
+    local: $.map(topics, (t) -> {value: normalize(t.name), displayValue: t.name, url: urls[t.id]})
+  )).initialize()
+   
+  $('#search').typeahead(
+    {hint: true, highlight: true, minLength: 1 },
+    {name: 'topics', displayKey: 'displayValue', source: engine.ttAdapter()}
+  )
+
+  $('#search').bind 'typeahead:selected', (obj, datum, name) ->
+    window.location = datum.url
+
+# Normalize inputs
+normalize = (input) ->
+  char_map = "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "ñ": "n"
+  
+  $.each char_map, (unnormalizedChar, normalizedChar) ->
+    regex = new RegExp(unnormalizedChar, "gi")
+    input = input.replace(regex, normalizedChar)
+
+  input

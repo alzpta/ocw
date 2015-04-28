@@ -1,0 +1,134 @@
+/* vendors
+*= require font-awesome/css/font-awesome
+*/
+
+
+
+/* colors */
+
+//gray scale
+$gray-2: #222222;
+$gray-4: #444444;
+$gray-6: #606060;
+$gray-7: #707070;
+$gray-8: #888888;
+$gray-a: #a0a0a0;
+$gray-b: #bbbbbb;
+$gray-c: #cccccc;
+$gray-d: #dddddd;
+$gray-e: #eeeeee;
+$gray-f4: #f4f4f4;
+$gray-f8: #f8f8f8;
+$gray-fa: #fafafa;
+$gray-fc: #fcfcfc;
+
+//primary colors
+$cyan: #00a2c1;
+$green: #4cc848;
+$orange: #fd8702;
+$red: #ed5124;
+$yellow: #d3d002;
+$blue: #24a4dd;
+
+//secondary colors
+$dcyan: darken($cyan, 10%);
+$lcyan: lighten($cyan, 5%);
+$lblue: lighten($blue, 10%);
+$dblue: #1e4f59;
+
+
+//component colors
+$primary: #d7181f;
+$dprimary: darken($primary, 10%);
+$lprimary: lighten($primary, 5%);
+$accent: #e8e804;
+$daccent: darken($accent, 5%);
+$dark: $dblue;
+$full-text: #434650;
+$half-text: $gray-7;
+$light-text: $gray-a;
+$body-bg: white;
+$sidebar-bg: $dark;
+$alert: $red;
+$success: $green;
+
+
+
+/* variables */
+
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1600px;
+
+$screen-phone-max: 479px;
+$screen-xs-max: 767px;
+$screen-sm-max: 991px;
+$screen-md-max: 1199px;
+$screen-lg-max: 1599px;
+
+$global-radius: 3px;
+
+$topbar-z: 5000;
+$modal-z: 8000;
+
+
+
+/* mixins */
+
+@import 'mixins';
+@import 'flex';
+
+
+
+/* fonts */	
+
+@import 'fonts';
+
+
+/* foundation */
+
+@import 'foundation_overrides';
+@import '../../vendor/bower_components/foundation/scss/foundation';
+
+/* aditional media queries */
+$medium-down: "#{$screen} and (max-width:#{upper-bound($medium-range)})";
+
+
+@import 'foundation_overwrites';
+
+
+
+
+
+
+
+/* base elements */
+
+h1 { 
+	@include primary-font(48, normal, $full-text);
+	text-align: center;
+}
+
+h2 { 
+	@include secondary-font(40, normal, $full-text);
+	text-align: center;
+}
+
+h3 { @include secondary-font(32, normal, $half-text); }
+
+p { @include secondary-font(24, normal, $half-text); }
+
+a {
+	@include secondary-font(24, normal, $blue);
+	text-decoration: none;
+	&:hover { color: $dblue; }
+}
+
+img { width: 100%; }
+
+
+
+/* components */
+
+// @import 'components/common_components';

@@ -1,0 +1,46 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<div id="contacts-new" class="page">
+	<div class="row">
+		<div class="large-7 column">
+			<form action="https://getsimpleform.com/messages?form_api_token=a108530e296961097f4a381e37a62090" method="post" data-abide>
+				<input type="hidden" name="redirect_to" value="http://google.com" />
+				
+				<h3>Contacto</h3>
+
+				<div class="field">
+					<label>Nombre</label>
+					<input class="radius" type="text" name="name" required>
+				</div>
+				
+				<div class="field">
+					<label>Correo</label>
+					<input class="radius" type="email" name="email" required>
+				</div>
+
+				<div class="field">
+					<label>Mensaje</label>
+					<textarea class="radius" rows="3" name="message" required></textarea>
+				</div>
+				
+				<div class="field clearfix">
+					<input type="submit" class="button radius" value="Enviar mensaje"></button></a>
+				</div>
+			</form>
+		</div>
+		<div class="large-5 column">
+			<ul class="vcard">
+				<li class="fn">Universidad del Norte</li>
+				<li class="street-address">Km.5 Vía Puerto Colombia</li>
+				<li class="locality">Barranquilla</li>
+				<li><span class="state">Atlántico</span></li>
+				<li><span class="zip">Tel. (57) (5) 3509509</span></li>
+				<li class="email"><a href="//uninorte.edu.co">uninorte.edu.co</a></li>
+			</ul>			
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

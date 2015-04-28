@@ -1,0 +1,79 @@
+---
+pagination:
+  for: topics
+  per_page: 20
+---
+
+<% 
+
+	topics = data.courses.catalog.map do |c| 
+		c.topics.map do |t|
+			OpenStruct.new({
+				id: t.id,
+				name: t.name,
+				author: c.author,
+				image: c.image,
+				url: "/courses/" + "#{t.name} #{t.id}".slugify
+			})
+		end
+	end.flatten
+
+%>
+
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<div id="courses-index" class="page">
+	<div class="row">
+		<div class="slim-toolbar clearfix">
+			<dl class="sub-nav" data-tab>
+				<dd class="active"><a href="#all">Todos</a></dd>
+				<dd><a href="#popular">Populares</a></dd>
+			</dl>
+		</div>
+		<div class="tabs-content">
+			<div class="content active" id="all">
+				<ul class="courses side-nav clearfix">
+					<% pagination.each do |topic| %>
+					<li class="large-6 columns">
+						<% link_to topic.url, class: 'clearfix' do %>
+							<figure style="background-image: url(<%= image_path topic.image %>);">
+								<figcaption>
+									<h2><%= topic.name %></h2>
+								</figcaption>
+							</figure>
+							<span><%= topic.author %><br />2015</span>
+						<% end %>
+					</li>
+					<% end %>
+				</ul>
+				<ul class="pagination">
+					<li><%= link_to "primera", pagination.first_page.url %></li>
+					<li class="arrow"><%= link_to "&laquo; anterior ", pagination.prev_page.url if pagination.prev_page %></li>
+					<li class="arrow"><%= link_to "siguiente &raquo;", pagination.next_page.url if pagination.next_page %></li>
+					<li><%= link_to "última", pagination.last_page.url %></li>
+				</ul>
+			</div>
+
+			<div class="content" id="popular">
+				<ul class="courses side-nav clearfix">
+					<% topics.select{|t| data.courses.suggested.include? t.id}.each do |topic| %>
+					<li class="large-6 columns">
+						<% link_to topic.url, class: 'clearfix' do %>
+							<figure style="background-image: url(<%= image_path topic.image %>);">
+								<figcaption>
+									<h2><%= topic.name %></h2>
+ 								</figcaption>
+							</figure>
+							<span><%= topic.author %><br />2015</span>
+						<% end %>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

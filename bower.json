@@ -1,0 +1,13 @@
+{
+    "name": "ocw",
+    "version": "0.0.1",
+    "dependencies": {
+        "font-awesome": "*",
+        "foundation": "zurb/bower-foundation#5.4.4",
+        "jquery": "*",
+        "knockout": "*",
+        "randomcolor" : "https://github.com/davidmerfield/randomColor.git",
+        "typeahead.js" : "*",
+        "underscore": "*"
+    }
+}

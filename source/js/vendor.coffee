@@ -1,0 +1,9 @@
+#= require jquery
+#= require foundation/js/foundation/foundation
+#= require foundation/js/foundation/foundation.topbar
+#= require foundation/js/foundation/foundation.tab
+#= require foundation/js/foundation/foundation.reveal
+#= require underscore
+#= require knockout
+#= require typeahead.js/dist/typeahead.bundle.js
+#= require randomcolor/randomColor

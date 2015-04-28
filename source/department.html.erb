@@ -1,0 +1,27 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<div id="departments-show" class="page">
+	<div class="row">
+		<h3><%= department %></h3>
+		<ul class="courses side-nav clearfix">
+			<% data.courses.catalog.select{|c| c.department.slugify == slug}.each do |course| %>
+			<li class="large-6 columns">
+				<% link_to "/courses/" + "#{course.name} #{course.id}".slugify, class: 'clearfix' do %>
+					<figure style="background-image: url(<%= image_path course.image %>);">
+						<figcaption>
+							<h2><%= course.name %></h2>
+							<h3><%= course.author %></h3>
+							<p><%= course.creation_date %></p>
+						</figcaption>
+					</figure>
+					<span><%= course.description[0..100].gsub(/\s\w+\s*$/,'...') %></span>
+				<% end %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

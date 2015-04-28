@@ -1,0 +1,345 @@
+/* General overwrites */
+
+.rows { margin: 0 rc(-15); }
+
+
+
+/* Forms */
+
+$inputs: 'input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], 
+	input[type="datetime-local"], input[type="month"], 	input[type="week"], input[type="email"], 
+	input[type="number"], input[type="search"], input[type="tel"], input[type="time"], 
+	input[type="url"], textarea, select';
+
+form {
+	#{$inputs} { margin-bottom: 0; }
+	select { @include secondary-font(18, 300, $half-text); }
+	label.inline {
+		@include uppercase-first;
+		height: rc(41);
+		line-height: rc(41);
+		margin: 0; 
+		padding: 0;
+	}
+	p.inline {
+		@include uppercase-first; 
+		color: $half-text; 
+		height: rc(41);
+		line-height: rc(41);
+		margin: 0;
+		padding: 0;
+	}
+	.field { 
+		&:before, &:after { content: ''; display: table; }
+		&:after { clear: both; }
+		*zoom: 1;
+		&:not(.compact) { margin-bottom: rc(24); }
+	}
+	&.page-form {
+		h2 { 
+			border-bottom: 1px solid black(0.1);
+			color: $primary;
+			margin: 0 0 16px;
+			padding: 8px 0;
+			text-align: left;
+		}
+	}
+}
+
+.button {
+	border: none;
+	&.tiny, &.small { 
+		font-family: $primary-font-normal; 
+		margin: 0;
+	}
+	&.submit {
+		margin-top: rc(16);
+	}
+}
+
+textarea { 
+	height: auto; 
+	resize: none;
+}
+
+
+
+/* Alerts and prompts */
+
+.close-prompt {
+	&.single { padding-bottom: rc(16); }
+}
+
+.alert-box {
+	@include uppercase-first;
+	background: $gray-e;
+	border: none;
+	color: $half-text;
+	font-style: normal;
+	margin: 0;
+	a { @include secondary-font(16, normal, $primary); }
+	&.single { margin-bottom: rc(16); }
+	&.error { 
+		color: $alert; 
+		&.single { margin-bottom: rc(16); }
+	}
+	.close { outline: none; }
+}
+
+.reveal-modal-bg { z-index: $modal-z; }
+
+.reveal-modal {
+	position: fixed;
+	z-index: $modal-z + 1;
+	&.with-progress {
+		@include box-shadow(inset 0 -5px 0 black(0.25));
+	}
+	&.dialog {
+		@include rounded-corners(0);
+		h1 {
+			background: $primary;
+			border-bottom: 1px solid black(0.2);
+			color: white;
+			margin: rc(-16 -32 16);
+			padding: rc(16 32 16);
+			text-align: left;
+			&.caps { font-size: 32px; }
+			.item-image {
+				float: left;
+				margin: rc(-6) rc(16) 0 0;
+				position: relative;
+				text-align: center;
+				width: 10%;
+				img {
+					border-radius: 50%;
+					border: 3px solid rgba(0, 0, 0, .2);
+					margin: 0 auto;
+					width: 64px;
+				}
+				.confirmation-mark {
+					bottom: 0;
+					position: absolute;
+					right: 4px;
+					i {
+						display: block;
+						font-size: 24px;
+					}
+				}
+			}
+			.top-actions {
+				float: right;
+				margin-top: rc(-16);
+				a {
+					background: rgba(0, 0, 0, 0.1);
+					border: none;
+					color: white;
+					display: block;
+					float: left;
+					height: rc(50);
+					position: static;
+					text-align: center;
+					width: rc(50);
+					&:hover { background: rgba(0, 0, 0, 0.3); }
+					i {
+						line-height: rc(50);
+						font-size: rc(32);
+					}
+				}
+			}
+		}
+		h2 { 
+			color: $primary; 
+			&.only-prompt {
+				color: $light-text;
+				padding: rc(16) 0;
+			}
+		}
+		table { width: 100%; }
+	}
+	#nprogress {
+		@include absolute-expanded(auto);
+		height: 5px;
+		overflow: hidden;
+		.bar {
+			position: static;
+			height: 5px;
+		}
+	}
+}
+
+
+
+/* Navigation */
+
+.fixed.for-topbar {
+	z-index: $topbar-z;
+}
+
+.top-bar {
+	// background: $primary;
+	@include box-shadow(0 0 3px black(0.25));
+	.name {
+		h1 {
+			height: $topbar-height;
+			text-align: left;
+			.u { color: $primary; }
+			a {
+				@include narrow-font(32, normal, $full-text);
+				height: $topbar-height;
+				line-height: $topbar-height;
+				padding-left: 0;
+				// text-transform: uppercase;
+			}
+		}
+	}
+	.row {
+		max-width: $row-width;
+		&:after, &:before {
+			content: initial;
+		}
+	}
+	&.expanded {
+		background: white;
+		position: fixed;
+	}
+	@media #{$medium-down} {
+		.row {
+			border-bottom: 1px solid $gray-c;
+		}
+		.top-bar-section {
+			& > ul {
+				& > li.has-form {
+					padding: 0 16px;
+				}
+			}
+		}
+	}
+}
+
+.top-bar-section {
+	& > ul {
+		& > li.has-dropdown {
+			.dropdown {
+				@include box-shadow(0 3px 3px black(0.25));
+			}
+		}
+		& > li.has-form {
+			line-height: $topbar-height;
+			& > * {
+				display: inline-block;
+				position: static;
+				vertical-align: middle;
+			}
+			input {
+				@include rounded-corners($global-radius);
+				font-size: 20px;
+				height: 48px;
+				top: initial;
+				// padding: 0 24px;
+			}
+		}
+	}
+}
+
+
+
+/* Toolbars */
+
+.button-group.toolbar {
+	& > li {
+		float: left;
+		margin: 0;
+		.button {
+			border-color: white(0.2);
+			font-size: rc(22);
+			height: rc(48);
+			line-height: rc(48);
+			margin: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			width: rc(48);
+			&.no-border { border: none; }
+			i { 
+				@include absolute-tlwh(rc((48 - 22) / 2), rc((48 - 22) / 2), rc(22), rc(22));
+				display: block;
+			}
+		}
+	}
+	&.white {
+		.button {
+			@include transition-ex(none);
+			border-color: black(0.1);
+			&:not(:hover) {
+				background: white;
+				color: $light-text;
+				&.for-search { color: $gray-d; }
+				&.disabled { background: $gray-f4; }
+			}
+			&:hover {
+				&:not(.alert) { background: $primary; }
+				&:after {
+					content: ' ';
+					@include absolute-expanded(-1px, -1px, -1px, -1px);
+					border: 1px solid $primary;
+					z-index: 1;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Tabs */
+
+.tabs {
+	dd {
+		& > a { 
+			@include secondary-font(18, 300, $light-text);
+			outline: none;
+			position: relative;
+		}
+		&.active { 
+			& > a { @include secondary-font(18, normal, $primary); }
+		}
+	}
+	&.vertical {
+		dd {
+			&:not(:last-child) { border-bottom: 1px solid black(0.1) }
+			&:not(.active) { 
+				border-right: 1px solid black(0.1); 
+				& > a { background: $gray-fa; }
+			}
+			&.active { border-right: 1px solid transparent; }
+		}	
+	}
+	&.icons {
+		width: 10%;
+		dd {
+			& > a {
+				padding: rc(16) 0;
+				text-align: center;
+				i { font-size: rc(28); }
+			}
+			&.active { 
+				& > a { color: $half-text; }
+			}
+		}
+	}
+}
+
+.tabs-content {
+	margin-bottom: 0;
+	p, a { outline: none; }
+	&.vertical {
+		& > .content {
+			float: none;
+			padding: 0 0 0 rc(24);
+		}
+	}
+	&.icons { width: 90%; }
+}
+
+.content.padded { padding: 16px 32px; }

@@ -1,0 +1,18 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<div id="about-index" class="page">
+	<div class="row">
+		<div class="large-5 column">
+			<%= image_tag 'about.jpg' %>
+		</div>
+		<div class="large-7 column">
+			<h3>Acerca de</h3>
+			<p><%= Forgery(:lorem_ipsum).words(40) %></p>
+			<p><%= Forgery(:lorem_ipsum).words(40) %><a href="//uninorte.edu.co"> uninorte.edu.co</a>.</p>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

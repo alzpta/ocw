@@ -1,0 +1,97 @@
+/* custom fonts */
+
+@font-face {
+	font-family: CardoRegular;
+	src: font-url('Cardo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: CardoBold;
+	src: font-url('Cardo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: CardoItalic;
+	src: font-url('Cardo-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: SourceSansProRegular;
+	src: font-url('SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: SourceSansProLight;
+	src: font-url('SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: OpenSansCondBold;
+	src: font-url('OpenSans-CondBold.ttf') format('truetype');
+}
+
+
+/* font families */
+
+$secondary-font-italic: CardoItalic, 'Times New Roman', serif;
+$secondary-font-normal: CardoRegular, 'Times New Roman', serif;
+$secondary-font-bold: CardoBold, 'Times New Roman', serif;
+$primary-font-normal: SourceSansProRegular, Helvetica, sans-serif;
+$primary-font-light: SourceSansProLight, Helvetica, sans-serif;
+$narrow-font-regular: OpenSansCondBold, 'Arial Narrow', sans-serif;
+
+
+
+/* font mixins */
+
+@mixin base-font($size, $weight: normal, $color: $full-text, $style: normal) {
+	color: $color;
+	font-size: rc($size);
+	font-style: $style;
+	font-weight: $weight;
+	line-height: rc($size * 1.25);
+}
+
+@mixin primary-font($size: 18, $weight: normal, $color: $full-text, $style: normal) {
+	@include base-font($size, $weight, $color, $style);
+	@if $weight == 300 { font-family: $primary-font-light; }
+	@if $weight == normal { font-family: $primary-font-normal; }
+}
+
+@mixin secondary-font($size: 40, $weight: normal, $color: $full-text, $style: normal) {
+	@include base-font($size, $weight, $color, $style);
+	@if $style == italic { font-family: $secondary-font-italic; }
+	@if $style == normal { font-family: $secondary-font-normal; }
+	@if $weight == bold { font-family: $secondary-font-bold; }
+}
+
+@mixin narrow-font($size: 40, $weight: normal, $color: $full-text, $style: normal) {
+	@include base-font($size, $weight, $color, $style);
+	font-family: $narrow-font-regular;
+}
+
+
+
+/* utility mixins */
+
+@mixin title($color: $half-text) {
+	@include primary-font(48, normal, $color);
+}
+
+@mixin subtitle($color: $half-text) {
+	@include secondary-font(24, normal, $color);
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin uppercase-first {
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.uppercased-first { @include uppercase-first; }

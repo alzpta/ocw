@@ -1,0 +1,676 @@
+@import "src/base";
+
+
+
+/* application shared rules */
+
+html {
+	height: 100%;
+	* { outline: none; }
+}
+
+body {
+	background: $body-bg;
+	height: 100%;
+	padding-top: $topbar-height;
+}
+
+body {
+	@media #{$small-up} {
+
+	}
+}
+
+header {
+	@include box-shadow(0 2px 5px 0 black(0.26));
+	// height: 90%;
+	height: 560px;
+	margin-bottom: 24px;
+	overflow: hidden;
+	.course {
+		float: left;
+		overflow: hidden;
+		figure {
+			background: white center center no-repeat;
+			background-size: cover;
+			height: 100%;
+			margin: 0;
+			position: relative;
+			width: 100%;
+			h2, h3, p {
+				@include transition-vendor(0.350s, transform);
+				right: 32px;
+				left: 32px;
+				padding: 10px 0;
+				margin: 0;
+			}
+			h2, h3 {
+				text-transform: uppercase;
+			}
+			h2 {
+				@include translate-2d(0, 20px);
+				text-align: left;
+				word-spacing: -0.15em;
+				&:after {
+					@include absolute-tlwh(100%, 0, 100%, 4px);
+					@include translate-2d(0, 40px);
+					background: white;
+					content: '';
+				}
+			}
+			h3 {
+				@include secondary-font(18, normal, white(0.85));
+				margin-top: 8px;
+			}
+			p {
+				@include secondary-font(20, normal, white);
+				@include translate-2d(0, 100%);
+				position: absolute;
+				bottom: 30px;
+				line-height: 1.5;
+			}
+			h2:after, p {
+				opacity: 0;
+				-webkit-transition: opacity 0.350s, -webkit-transform 0.350s;
+				-moz-transition: opacity 0.350s, -moz-transform 0.350s;
+				transition: opacity 0.350s, transform 0.350s;
+			}
+			figcaption {
+				@include backface-visibility(none);
+				@include transition(0.350s, background-color);
+				background: black(0.25);
+				color: white;
+				padding: 32px;
+				&:before, &:after {
+					pointer-events: none;
+				}
+				&, & > a {
+					@include absolute-expanded;
+				}
+				& > a {
+					font-size: 0;
+					opacity: 0;
+					text-indent: 200%;
+					white-space: nowrap;
+					z-index: 1000;
+				}
+			}
+			&:hover, &.main {
+				h2 {
+				 	@include translate-2d(0, 0);
+				}
+				h2:after, p {
+					@include translate-2d(0, 0);
+					opacity: 1;
+				}
+				h3 {
+					@include translate-2d(-150%, 0);
+				}
+			}
+			&:hover {
+				figcaption {
+					background-color: black(0.45);
+				}
+			}
+			&.main {
+				h3 {
+					@include translate-2d(0, 0);
+					top: 120px;
+				}
+			}
+		}
+	}
+	.main-course {
+		height: 100%;
+		width: 40%;
+		h2 {
+			@include narrow-font(48, normal, white);
+		}
+		figcaption {
+			
+		}
+	}
+	.secondary-courses {
+		float: left;
+		height: 100%;
+		width: 60%;
+		.secondary-course {
+			height: 50%;
+			overflow: hidden;
+			width: 50%;
+			h2 {
+				@include narrow-font(24, normal, white);
+				// span {
+				// 	@include ellipsis;
+				// 	display: block;
+				// }
+			}
+			figcaption {
+				padding: 16px 32px;
+			}
+		}
+	}
+	@media #{$medium-down} {
+		height: auto;
+		.main-course, .secondary-courses {
+			float: none;
+			width: 100%;
+		}
+		.course {
+			figure { 
+				pointer-events: none;
+				figcaption {
+					position: static;
+					h3, p { display: none; }
+					h2 {
+						@include translate-2d(0, 0);
+						word-spacing: -0.05em;
+					}
+					h2:after { display: none; }
+				}
+			}
+		}
+		.main-course {
+			height: auto;
+			figure figcaption h2 {
+				font-size: 32px;
+				line-height: 40px;
+			}
+		}
+		.secondary-courses {
+			.secondary-course {
+				float: none;
+				height: auto;
+				width: 100%;
+				figure figcaption h2 {
+					font-size: 22px;
+					line-height: 28px;
+				}
+			}
+		}
+	}
+}
+
+.slim-toolbar {
+	padding: 24px 24px 0;
+	.sub-nav {
+		overflow: initial;
+		text-align: center;
+		dd {
+			float: none;
+			a {
+				@include narrow-font(20, normal, $light-text);
+				@include rounded-corners(0);
+				background: none;
+				&:hover {
+					background: none;
+					color: $primary;
+				}
+			}
+			&.active a {
+				color: $half-text;
+				border-bottom: 1px dotted $gray-c;
+			}
+		}
+	}
+	@media #{$small-only} {
+		padding: 0;
+		.sub-nav {
+			margin-bottom: 0;
+			text-align: left;
+			dd {
+				display: block;
+				margin-bottom: 12px;
+				a {
+					padding: 6px 0;
+				}
+			}
+		}
+	}
+}
+
+.page {
+	padding: 24px 0;
+	min-height: 85%;
+	@media #{$small-only} {
+		h3 {
+			font-size: 24px;
+			margin: 24px 0 12px;
+		}
+		ul li a {
+			padding: 6px 0;
+		}
+		p {
+			@include secondary-font(18, normal, $half-text);
+			margin: 0;
+			text-align: justify !important;
+			width: 100%; 
+			a {
+				@include secondary-font(18, normal, $blue);
+			}
+		}
+		form {
+			label {
+				font-size: 18px;
+			}
+			.button {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	@media #{$medium-only} {
+		h3 {
+			margin: 24px 0 12px;
+		}
+	}
+}
+
+.row {
+	padding: 0 24px;
+}
+
+h3 {
+	color: $primary;
+	margin-bottom: 24px;
+}
+
+ul, .side-nav {
+	li { a:not(.button) { color: $half-text; } }
+}
+
+ul.courses {
+	padding: 24px 8px;
+	li {
+		float: left;
+		a {
+			padding: 16px;
+			span { @include secondary-font(20px, normal, $half-text); }
+			figure {
+				background-size: cover;
+				background: white center center no-repeat;
+				float: left;
+				display: block;
+				height: 180px;
+				margin: 0 16px 0 0;
+				overflow: hidden;
+				position: relative;
+				width: 240px;
+				figcaption {
+					@include absolute-expanded;
+					padding: 16px;
+					background: black(0.5);
+					h2 {
+						@include narrow-font(20px, normal, white);
+						margin-bottom: 8px;
+						text-align: left;
+						text-transform: uppercase;
+					}
+					h3 {
+						@include secondary-font(18px, normal, white(0.95));
+					}
+					p {
+						@include secondary-font(18px, normal, white(0.85));
+						@include uppercase-first;
+					}
+				}
+			}
+		}
+	}
+	@media #{$small-only} {
+		padding: 24px 0;
+		li {
+			padding: 0;
+			a:not(.button) {
+				padding: 16px 0;
+				figure {
+					height: auto;
+					margin: 0 0 12px 0;
+					width: 100%;
+					figcaption {
+						position: static;
+						p {
+							margin-bottom: 0;
+						}
+					}
+				}
+				& > span {
+					font-size: 18px;
+					line-height: 24px;
+					text-align: justify;
+				}
+			}
+		}
+	}
+}
+
+#home-index {
+	.middle {
+		border-top: 1px dotted $gray-c;
+		border-bottom: 1px dotted $gray-c;
+		padding: 24px 0;
+		.category-list {
+			// @include box-shadow(0 2px 5px 0 black(0.26));
+			border: none;
+			li {
+				text-align: left;
+				&.title {
+					@include narrow-font(24px, normal, $full-text);
+					padding: 0 16px 24px;
+					a {
+						display: inline;
+						i { color: lighten($half-text, 15%); }
+					}
+				}
+				a {
+					color: $half-text;
+					font-size: 18px;
+				}
+			}			
+		}
+	}
+	.about {
+		padding: 32px;
+		p {
+			margin: 0 auto;
+			width: 50%;
+		}
+		a.more-info {
+			display: block;
+			margin: 32px 0 0;
+		}
+	}
+	@media #{$medium-down} {
+		padding-top: 0;
+		& > .row {
+			padding: 0;
+		}
+		.middle {
+			border-top: none;
+			padding-top: 0;
+		}
+		.about {
+			p {
+				@include secondary-font(18, normal, $half-text);
+				margin: 0;
+				text-align: justify !important;
+				width: 100%;
+			}
+			a { font-size: 20px; }
+		}
+	}
+
+}
+
+#courses-show {
+	.content {
+		margin-top: 48px;
+	}
+	header {
+		height: 400px;
+		.main-course {
+			height: 100%;
+			width: 100%;
+			figcaption {
+				h2 {
+					@include narrow-font(72, normal, white);
+				}
+				p { @include uppercase-first; }
+			}
+		}
+		.video-link {
+			@include absolute-expanded(auto, auto, 16px, 16px);
+			i {
+				font-size: 32px;
+				color: white;
+			}
+		}
+	}
+	.details-page {
+		padding-right: 32px;
+		h2 {
+			margin-bottom: 24px;
+			text-align: left;
+		}
+		p {
+			@include secondary-font(22, normal, $half-text);
+			text-align: justify;
+		}
+		ul, ol {
+			margin-bottom: 16px;
+			li, li > a { 
+				@include secondary-font(18, normal, $half-text);
+				line-height: 28px;
+				a {
+					color: $blue;
+				}
+			}
+		}
+		strong { color: $full-text; }
+	}
+	.professor {
+		border-left: 1px dotted $gray-c;
+		padding-left: 32px;
+		figure {
+			@include rounded-corners(50%);
+			background-size: cover;
+			background: white center center no-repeat;
+			display: block;
+			margin: 32px auto;
+			padding-bottom: 33%;
+			width: 33%;
+		}
+		h3 {
+			@include narrow-font(22, normal, $full-text);
+			margin-bottom: 32px;
+			text-align: center;
+		}
+		p {
+			@include secondary-font(20, normal, $half-text);
+			text-align: justify;
+			a { font-size: rc(20); }
+		}
+	}
+	@media #{$medium-down} {
+		padding-top: 0;
+		header {
+			height: auto;
+			margin: 0 -24px 24px;
+			.main-course {
+				figcaption {
+					h3, p {
+						display: block;
+						padding: 0;
+					}
+					h2 {
+						@include narrow-font(40, normal, white);
+					}
+					p { position: static; }
+				}
+			}
+		}
+		.content {
+			margin-top: 12px;
+		}
+		.details-page {
+			padding: 0;
+			h2 {
+				font-size: 28px;
+				margin-bottom: 12px;
+			}
+			p {
+				@include secondary-font(18, normal, $half-text);
+			}
+			ul, ol {
+				li { 
+					@include secondary-font(16, normal, $half-text);
+					line-height: 24px;
+				}
+			}
+		}
+		.professor {
+			border-left: none;
+			border-top: 1px dotted $gray-c;
+			margin-top: 24px;
+			padding-left: 0;
+			figure {
+				height: 160px;
+				padding-bottom: 0;
+				width: 160px;
+			}
+			p {
+				@include secondary-font(18, normal, $half-text);
+			}
+		}
+	}
+}
+
+#courses-index {
+	.pagination {
+		margin-top: 16px;
+		text-align: center;
+		li {
+			display: inline-block;
+			float: none;
+		}
+	}
+}
+
+#contacts-new {
+	.vcard {
+		li {
+			font-size: 20px;
+			&.fn { font-size: 24px; }
+		}
+	}
+	@media #{$medium-down} {
+		h3 {
+			margin: 0 0 24px;
+		}
+		.vcard {
+			border: none;
+			border-top: 1px dotted $gray-c;
+			padding: 24px 0 0;
+			width: 100%;
+		}
+	}
+}
+
+#about-index {
+
+}
+
+#departments-index {
+	
+}
+
+#departments-show {
+	h3.title {
+		color: $half-text;
+		text-align: center;
+	}
+}
+
+footer {
+	background: $dark;
+	padding: 24px;
+	.sub-nav {
+		display: block;
+		text-align: center;
+		li {
+			display: inline;
+			float: none;
+			a {
+				@include secondary-font(20, normal, white(0.75));
+				display: inline-block;
+				padding: 4px 12px;
+				&:hover {
+					border-bottom: 1px dashed white(0.5);
+					color: white;
+					padding-bottom: 3px;
+				}
+			}
+		}
+	}
+	.copyright {
+		margin-top: 32px;
+		p {
+			@include secondary-font(18, normal, white(0.5));
+			text-align: center;
+		}
+	}
+	@media #{$medium-down} {
+		.sub-nav {
+			text-align: left;
+			li a {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+
+/* typeahead */
+
+span.twitter-typeahead {
+	width: 100%;
+}
+
+span.twitter-typeahead .tt-hint {
+	color: white(0.5) !important;
+}
+
+span.twitter-typeahead .tt-dropdown-menu {
+	@include box-shadow(0 5px 5px black(0.25));
+	@include rounded-corners($global-radius);
+	background-clip: padding-box;
+	background-color: white;
+	border: 1px solid black(0.2);
+	display: none;
+	float: left;
+	left: 0;
+	list-style: none;
+	margin: 2px 0 0;
+	overflow: hidden;
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	width: 100%;
+	z-index: 1000;
+}
+
+span.twitter-typeahead .tt-suggestion > p {
+	@include secondary-font(18, normal, black(0.75));
+	border-bottom: 1px solid black(0.05);
+	clear: both;
+	display: block;
+	margin: 0;
+	padding: 12px 8px;
+	white-space: nowrap;
+	&:focus, &:active, &:hover, &:focus {
+		color: white;
+		text-decoration: none;
+		outline: 0;
+		background-color: $primary;
+	}
+}
+
+span.twitter-typeahead .tt-suggestion.tt-cursor {
+	background-color: $primary;
+	p { color: white }
+}
+
+.input-group span.twitter-typeahead {
+	display: block !important;
+}
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+	top: 32px !important;
+}
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+	top: 44px !important;
+}
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+	top: 28px !important;
+}

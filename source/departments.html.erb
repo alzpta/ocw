@@ -1,0 +1,21 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<div id="departments-index" class="page">
+	<div class="row">
+		<div class="large-5 column">
+			<%= image_tag 'about.jpg' %>
+		</div>
+		<div class="large-7 column">
+			<h3>Departamentos</h3>
+			<ul class="side-nav clearfix">
+				<% data.courses.catalog.map(&:department).uniq.each do |department| %>
+				<li><%= link_to department, "/departments/" + department.slugify %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

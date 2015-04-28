@@ -1,0 +1,87 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<%
+
+	def youtube_embed(youtube_url)
+	  if youtube_url[/youtu\.be\/([^\?]*)/]
+	    youtube_id = $1
+	  else
+	    youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
+	    youtube_id = $5
+	  end
+
+	  %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+	end
+
+%>
+
+<div id="courses-show" class="page">
+	<div class="row">
+		<header>
+			<div class="main-course course">
+				<figure style="background-image: url(<%= image_path course.image %>);" class="main">
+					<figcaption>
+						<h2><%= topic.name %></h2>
+						<h3><%= course.author %></h3>
+					</figcaption>
+					<a class="video-link" href="#" data-reveal-id="reveal-modal-video"><i class="fa fa-play-circle"></i></a>
+				</figure>
+			</div>
+		</header>
+		<div id="reveal-modal-video" class="reveal-modal large" style="top: 40px !important;" data-reveal>
+			<h2><%= topic.name %></h2>
+			<div class="flex-video widescreen">
+				<%= youtube_embed(topic.video) %>
+			</div>
+
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+		<div class="slim-toolbar clearfix">
+			<dl class="sub-nav" data-tab>
+				<dd class="active"><a href="#topics">Charlas</a></dd>
+				<dd><a href="#bibliography">Bibliografia</a></dd>
+			</dl>
+		</div>
+		<div class="tabs-content">
+			<div class="content active" id="topics">
+				<div class="details-page large-8 column">
+					<h2>Charlas</h2>
+					<ul>
+					<% course.topics.each do |topic| %>
+						<li>
+							<strong><%= topic.name %></strong><br />
+							<a href="#" data-reveal-id="reveal-modal-<%= topic.id%>">Ver charla</a>
+							<div id="reveal-modal-<%= topic.id%>" class="reveal-modal large" style="top: 40px !important;" data-reveal>
+								<h2><%= topic.name %></h2>
+								<div class="flex-video widescreen">
+									<%= youtube_embed(topic.video) %>
+								</div>
+
+								<a class="close-reveal-modal">&#215;</a>
+							</div>
+						</li>
+					<% end %>
+					</ul>
+				</div>
+				<div class="professor large-4 column">
+					<figure style="background-image: url(<%= image_path course.author_image %>);" class="main"></figure>
+					<h3><%= course.author %></h3>
+					<p><%= course.author_bio %></p>
+					<p><%= link_to "Cvlac de #{course.author}", course.author_cvlac %></p>
+					<p><%= link_to 'Canal de Youtube', course.author_channel %></p>
+				</div>
+			</div>
+
+			<div class="content" id="bibliography">
+				<div class="details-page large-12">
+					<h2>Bibliografía</h2>
+					<%= course.bibliography %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>

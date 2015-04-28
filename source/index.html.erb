@@ -1,0 +1,81 @@
+<!-- navbar -->
+<%= partial 'views/shared/navbar' %>
+
+<% 
+
+	topics = data.courses.catalog.map do |c| 
+		c.topics.map do |t|
+			OpenStruct.new({
+				id: t.id,
+				name: t.name,
+				author: c.author,
+				image: c.image,
+				url: "/courses/" + "#{t.name} #{t.id}".slugify
+			})
+		end
+	end.flatten
+
+%>
+
+<!-- content -->
+<section id="home-index" class="page">
+	<div class="row">
+		<header>
+			<div class="main-course course">
+				<% topics.select{|t| t.id == data.courses.highlighted[0]}.each do |topic| %>
+					<% link_to topic.url, class: 'clearfix' do %>
+						<figure style="background-image: url(<%= image_path topic.image %>);" class="main">
+							<figcaption>
+								<h2><%= topic.name %></h2>
+								<h3><%= topic.author %></h3>
+							</figcaption>			
+						</figure>
+					<% end %>
+				<% end %>
+			</div>
+			<div class="secondary-courses">
+				<% topics.select{|t| data.courses.highlighted.drop(1).include? t.id}.each do |topic| %>
+				<div class="secondary-course course">
+					<% link_to topic.url, class: 'clearfix' do %>
+						<figure style="background-image: url(<%= image_path topic.image %>);">
+							<figcaption>
+								<h2><%= topic.name %></h2>
+								<h3><%= topic.author %></h3>
+							</figcaption>			
+						</figure>
+					<% end %>
+				</div>
+				<% end %>
+			</div>	
+		</header>
+	</div>
+	<div class="middle">
+		<div class="row">
+			<div class="medium-6 columns">
+				<ul class="side-nav category-list">
+					<li class="title">Charlas&nbsp;&nbsp;<a href="/courses"><%= fa_icon 'external-link' %></a></li>
+					<% topics.select{|t| data.courses.suggested.include? t.id}.each do |topic| %>
+					<li><%= link_to topic.name, topic.url, class: 'clearfix' %></li>
+					<% end %>
+				</ul>
+			</div>
+			<div class="medium-6 columns">
+				<ul class="side-nav category-list">
+					<li class="title">Profesores</a></li>
+					<% data.courses.catalog.map(&:author).uniq.take(10).each do |author| %>
+					<li><a><%= author %></a></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="about">
+		<h2>Acerca de</h2>
+		<p class="text-center"><%= Forgery(:lorem_ipsum).words(40) %></p>
+		<a class="more-info text-center" href="/about">Más información</a>
+	</div>
+</section>
+
+
+<!-- footer -->
+<%= partial 'views/shared/footer' %>
